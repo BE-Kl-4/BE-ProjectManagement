@@ -1,0 +1,7 @@
+# .gitignore di dalam folder_project (tes1_v3)
+
+# Ignore file dengan node modules pada folder server
+server/node_modules/
+
+# Ignore file folder models
+server/database/models
