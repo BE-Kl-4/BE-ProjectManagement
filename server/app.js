@@ -1,19 +1,18 @@
-// app.js
 
-// Import modules yang dibutuhkan
-const express = require('express'); // Modul utama untuk membuat dan mengelola server web dengan Express.
+const express = require('express'); 
 
 const router = require('./routers/router')
+const usersRoutes = require('./routers/usersRoutes')
+const individualRoutes= require('./routers/individualRoutes')
 
 // Inisialisasi Express :
 const app = express(); // Membuat instance aplikasi Express.
-
-// Middleware Express untuk Parsing JSON dan URL-encoded:
-// mengurai payload JSON dan data formulir yang dikirim dengan metode POST.
 app.use(express.json());
 
 // Router
-app.use('/api/users', router);
+app.use('/router', router);
+app.use('/users', usersRoutes);
+app.use('/individuals', individualRoutes);
 
 // Menentukan Port dan Mendengarkan:
 const PORT = process.env.PORT || 3000;
@@ -21,4 +20,3 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
-
